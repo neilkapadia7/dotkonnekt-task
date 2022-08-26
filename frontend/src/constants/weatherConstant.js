@@ -1,0 +1,7 @@
+export const GET_WEATHER = 'GET_WEATHER';
+export const ADD_WEATHER = 'ADD_WEATHER';
+export const ADD_WEATHER_RESULT = 'ADD_WEATHER_RESULT';
+export const SET_LOADING = 'SET_LOADING';
+export const WEATHER_RESULT = 'WEATHER_RESULT';
+export const WEATHER_ERROR = 'WEATHER_ERROR';
+export const END_LOADING = 'END_LOADING';
