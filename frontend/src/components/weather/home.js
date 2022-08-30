@@ -6,20 +6,27 @@ import Message from '../general/Message';
 import Loader from '../general/Loader';
 import Weather from './Weather'
 import { useLocation } from 'react-router-dom';
-import {addForecast, addCurrent, getWeather} from '../../services/weather'
+import {addForecast, addCurrent, getWeather, getMapperData} from '../../services/weather'
 
 
 const HomeScreen = (props) => {
     const [loading, setloading] = useState(false)
+    const [mapperData, setMapperData] = useState(false)
     const [selectVal, setSelectedVal] = useState('Select Weather Options')
     const [cityName, setCityName] = useState('')
     const [weatherData, setWeatherData] = useState(null)
     const [weatherLoading, setWeatherLoading] = useState(false)
 
     useEffect(() => {
-      console.log('weatherData', weatherData)
-    }, [weatherData])
+      getMapperDataCall();
+    }, [])
     
+    const getMapperDataCall = async () => {
+      setloading(true);
+      let getData = await getMapperData();
+      if(getData.status) setMapperData(getData.data);
+      setloading(false);
+    }
 
     const checkWeather = async (e, isForecast) => {
       e.preventDefault()
@@ -76,7 +83,7 @@ const HomeScreen = (props) => {
               <Row>
                 {weatherData && 
                   <Col key={weatherData.id} sm={12} md={6} lg={4} xl={3}>
-                      <Weather weather={weatherData} isForecast={selectVal === 'Forecast' ? true : false}/>
+                      <Weather weather={weatherData} mapperData={mapperData} isForecast={selectVal === 'Forecast' ? true : false}/>
                     </Col>
                 }
               </Row>

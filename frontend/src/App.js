@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Header from './components/general/Header';
 import Footer from './components/general/Footer';
 import HomeScreen from './components/weather/home';
+import MapperScreen from './components/weather/Mapper';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Container>
           <Routes>
             <Route path='/' element={<HomeScreen />} />
+            <Route path='/edit-mapper' element={<MapperScreen />} />
           </Routes>
         </Container>
       </main>

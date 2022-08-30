@@ -15,11 +15,11 @@ router.post('/get-forecast-weather',
 addForecasts
 );
 
-router.post('add-mapper',
+router.post('/add-mapper',
 addMapperData
 );
 
-router.post('get-mapper',
+router.get('/get-mapper',
 getMapperData
 );
 

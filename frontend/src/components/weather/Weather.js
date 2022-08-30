@@ -3,7 +3,7 @@ import {Table} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 
-const Weather = ({weather, isForecast}) => {
+const Weather = ({weather, isForecast, mapperData}) => {
     return (
         <Table striped bordered hover>
             {isForecast ? 
@@ -11,12 +11,12 @@ const Weather = ({weather, isForecast}) => {
                 <>
                     <thead>
                         <tr>
-                        <th>Sunrise</th>
-                        <th>Sunset</th>
-                        <th>Moonrise</th>
-                        <th>Moonset</th>
-                        <th>Moon Phase</th>
-                        <th>Moon Illumination</th>
+                        <th>{mapperData?.sunrise || 'Sunrise'}</th>
+                        <th>{mapperData?.sunset || 'Sunset'}</th>
+                        <th>{mapperData?.moonrise || 'Moonrise'}</th>
+                        <th>{mapperData?.moonset || 'Moonset'}</th>
+                        <th>{mapperData?.moon_phase || 'Moon Phase'}</th>
+                        <th>{mapperData?.moon_illumination || 'Moon Illumination'}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,14 +35,14 @@ const Weather = ({weather, isForecast}) => {
                     <>
                         <thead>
                             <tr>
-                            <th>City Name</th>
-                            <th>Region</th>
-                            <th>Country</th>
-                            <th>Latitude</th>
-                            <th>Longitude</th>
-                            <th>Time Zone</th>
-                            <th>Localtime Epoch</th>
-                            <th>Localtime</th>
+                            <th>{mapperData?.name || 'City Name'}</th>
+                            <th>{mapperData?.region || 'Region'}</th>
+                            <th>{mapperData?.country || 'Country'}</th>
+                            <th>{mapperData?.lat || 'Latitude'}</th>
+                            <th>{mapperData?.lon || 'Longitude'}</th>
+                            <th>{mapperData?.tz_id || 'Time Zone'}</th>
+                            <th>{mapperData?.localtime_epoch || 'Localtime Epoch'}</th>
+                            <th>{mapperData?.localtime || 'Localtime'}</th>
                             </tr>
                         </thead>
                         <tbody>

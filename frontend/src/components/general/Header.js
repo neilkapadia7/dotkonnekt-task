@@ -15,11 +15,13 @@ const Header = (props) => {
               <Navbar.Collapse id="basic-navbar-nav">
                 
                 <Nav className="ml-auto">
-                  {/* <NavDropdown title='Home' id='home'> */}
                   <LinkContainer to='/'>
                     <Nav.Link>Home</Nav.Link>
                   </LinkContainer>
-                  {/* </NavDropdown >               */}
+                  <LinkContainer to='/edit-mapper'>
+                    <Nav.Link>Update Mapper</Nav.Link>
+                  </LinkContainer>
+                  
                 </Nav>
               </Navbar.Collapse>
               </Container>

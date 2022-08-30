@@ -32,3 +32,23 @@ export const getWeather = async (isForecast) => {
         return err
     }
 }
+
+export const getMapperData = async () => {
+    try {
+        const res = await axios.get(`${baseurl}api/get-mapper`)
+        return res.data;
+    } catch (err) {
+        console.log(err)
+        return err
+    }
+}
+
+export const addMapperData = async (payload) => {
+    try {
+        const res = await axios.post(`${baseurl}api/add-mapper`, payload)
+        return res.data;
+    } catch (err) {
+        console.log(err)
+        return err
+    }
+}
