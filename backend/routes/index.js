@@ -15,4 +15,12 @@ router.post('/get-forecast-weather',
 addForecasts
 );
 
+router.post('add-mapper',
+addMapperData
+);
+
+router.post('get-mapper',
+getMapperData
+);
+
 module.exports = router
