@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Responder = require('@service/response')
-const {checkWeather, addForecasts} = require('@controllers/index')
+const {checkWeather, addForecasts, addMapperData, getMapperData} = require('@controllers/index')
 
 router.post('/weather/add',
 checkWeather
